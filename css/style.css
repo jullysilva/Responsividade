@@ -29,8 +29,11 @@ header{
   height: 5%;
   border-bottom: white 5px solid;
 }
-header, footer, article, nav, aside {
+header, footer, article, aside {
   padding: 1%;
+}
+nav{
+  padding-top: 3%;
 }
 /* MENU */
 .menu, .footer{
@@ -101,6 +104,7 @@ ul li a img, .footer.col.imagem{
   transition: 0.5s;
   box-shadow: 0 4px 16px 0 black;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .card img{
@@ -116,11 +120,32 @@ ul li a img, .footer.col.imagem{
   text-justify: distribute;
 }
 /* NAVEGAÇÃO */
-.navegador a:hover{
-  background-color: #5100A3;
-  color: white;
+.navegador ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
+.navegador ul li{
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10% 5px 10% 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.navegador ul li a{
+  list-style: none;
+  text-decoration: none;
+  color: #5f605f !important;
+  padding: 1% 1% 5% 1%;
+}
+.navegador ul li:hover{
+  background-color: #5100A3;
+  transition: .4s;
+  color: white !important;
+}
+.navegador a:hover{
+  color: white !important;
+}
 
 /* FOOTER / RODAPE */
 .footer {
@@ -162,12 +187,12 @@ ul li a img, .footer.col.imagem{
   text-transform: uppercase;
   letter-spacing: 0.250em;
 }
-.footer .col ul {
+.footer .col ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.footer .col ul li {
+.footer .col ul li{
   font-size: 15px;
   font-family: inherit;
   font-weight: bold;
@@ -187,7 +212,6 @@ ul li a img, .footer.col.imagem{
   text-decoration: none;
   color: white;
 }
-
 .social ul li a:hover{
   color: #D0A2FF;
 }
@@ -206,7 +230,6 @@ ul li a img, .footer.col.imagem{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-decoration-line: none;
   color: black;
   border-radius: 1%;
@@ -233,47 +256,48 @@ ul li a img, .footer.col.imagem{
   line-height: 24px;
 }
 
+table {
+  max-width: 80%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: arial;
+}
+
+.table {
+  width: 100%;
+  margin: 10px;
+}
+
+.table th,
+.table td {
+  border-right: #999999 solid 1px;
+  font-size: 15px;
+  padding: 10px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table td:last-child {
+   border-right: 0;
+}
+
+.table thead th {
+  font-weight: normal;
+  background-color: #5100A3;
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.table tbody > tr:nth-child(odd) > td,
+.table tbody > tr:nth-child(odd) > th {
+  background-color: #f8f8f8;
+}
+
 /* RESPONSIVIDADE COM MEDIA QUERY */
-@media screen and (max-width: 800px){
-
-  .menu{
-    margin-top: 5px;
-    transition: all .4s;
-    margin-left: 0%;
-  }
-
-  nav{
-    display: none;
-  }
-
-  .menu ul li:hover{
-    background-color: #5100A3;
-    color: white;
-    transition: linear 0.3s;
-  }
-
-  .card{
-    border-radius: 1%;
-  }
-}
-
-
-@media screen and (min-width: 480px) {
-    .line-card{
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card{
-      border-radius: 1%;
-      margin: 2%;
-    }
-}
-
-
-@media only screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .contain {
     width: 1200px;
     margin: 0 auto;
@@ -282,7 +306,7 @@ ul li a img, .footer.col.imagem{
     border-radius: 1%;
   }
 }
-@media only screen and (max-width: 1139px) {
+@media screen and (max-width: 1139px) {
   .contain .social {
     width: 1000px;
     display: block;
@@ -290,12 +314,14 @@ ul li a img, .footer.col.imagem{
   .social h1 {
     margin: 0px;
   }
-
   .card{
     border-radius: 1%;
   }
+  nav{
+    display: none;
+  }
 }
-@media only screen and (max-width: 950px) {
+@media screen and (max-width: 950px) {
   .footer .col {
     width: 33%;
   }
@@ -305,91 +331,41 @@ ul li a img, .footer.col.imagem{
   .footer .col ul li {
     font-size: 13px;
   }
-
-  .card{
-    border-radius: 1%;
+  nav{
+    display: none;
   }
-}
-@media only screen and (max-width: 500px) {
-    .footer .col {
-      width: 50%;
-    }
-    .footer .col h1 {
-      font-size: 14px;
-    }
-    .footer .col ul li {
-      font-size: 13px;
-    }
-
-    .card{
-      border-radius: 1%;
-    }
-}
-@media only screen and (max-width: 340px) {
-  .footer .col {
-    width: 100%;
-  }
-
   .card{
     border-radius: 1%;
   }
 }
 
+@media screen and (max-width: 800px){
 
-
-
-
-
-
-
-
-  /* Table Base */
-
-  table {
-    max-width: 100%;
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-family: arial;
+  .menu{
+    margin-top: 5px;
+    transition: all .4s;
+    margin-left: 0%;
   }
-
-  .table {
-    border-bottom: #999999 solid 1px;
+  .menu ul li{
     width: 100%;
-    margin: 20px;
+    float: none;
+    display: block;
   }
-
-  .table th,
-  .table td {
-    border-right: #999999 solid 1px;
-    font-size: 12px;
-    padding: 8px;
-    line-height: 20px;
-    text-align: left;
-    vertical-align: middle;
+  nav{
+    display: none;
   }
-
-  .table td:last-child {
-     border-right: 0;
+  .card{
+    border-radius: 1%;
   }
-
-  .table thead th {
-    font-weight: normal;
-    background-color: #005dab;
-    color: #fff;
-    font-size: 15px;
+  .artigo{
+    padding: 2%;
   }
-
-  .table tbody > tr:nth-child(odd) > td,
-  .table tbody > tr:nth-child(odd) > th {
-    background-color: #f8f8f8;
+  #main article{
+    padding: 1%;
   }
+}
 
-
-/* Small Sizes */
-@media (max-width: 767px) { 
-  
-  /* Responsive Table */
+@media screen and (max-width: 767px) { 
   .table-responsive {
     display: block;
     position: relative;
@@ -428,6 +404,92 @@ ul li a img, .footer.col.imagem{
   .table td:last-child {
      border-right: #999999 solid 1px;
   }
+  .menu{
+    margin-top: 5px;
+    transition: all .4s;
+    margin-left: 0%;
+  }
+  .artigo{
+    padding: 1%;
+  }
+  #main article{
+    padding: 1%;
+  }
+}
 
+@media screen and (max-width: 500px) {
+  .footer .col {
+    width: 50%;
+  }
+  .footer .col h1 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+  .card{
+    border-radius: 1%;
+  }
+  .menu{
+    margin-top: 5px;
+    transition: all .4s;
+    margin-left: 0%;
+  }
+  .artigo{
+    padding: 0;
+  }
+  #main article{
+    padding: 1%;
+  }
+  .footer div.col {
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+  }
+}
 
+@media screen and (min-width: 480px) {
+    .line-card{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card{
+      border-radius: 1%;
+      margin: 2%;
+    }
+    #main article{
+      padding: 1%;
+    }
+    .footer > div.col {
+      width: 100%;
+      align-content: center;
+      align-items: center;
+      display: block;
+      text-align: center;
+    }
+}
+
+@media screen and (max-width: 340px) {
+  .footer .col {
+    width: 40%;
+  }
+
+  .card{
+    border-radius: 1%;
+  }
+  #main article{
+    padding: 1%;
+  }
+  .footer > div.col {
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+  }
 }
